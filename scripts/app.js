@@ -11,3 +11,8 @@ function makeRows(rows, cols) {
 };
 
 makeRows(16, 16);
+const button = document.getElementById('resetButton');
+button.addEventListener("click" , function(e) {
+  let inp = prompt("Please Enter The Size of New Grid");
+  makeRows(inp , inp);
+} );
