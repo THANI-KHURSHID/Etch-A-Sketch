@@ -1,3 +1,6 @@
+const originalRows = 16;
+const originalColumns = 16;
+
 const container = document.getElementById("container");
 
 function makeRows(rows, cols) {
@@ -10,9 +13,16 @@ function makeRows(rows, cols) {
   };
 };
 
-makeRows(16, 16);
+makeRows(originalRows , originalColumns);
+function removeGrid() {
+  while(container.firstChild) {
+    container.removeChild(container.lastChild);
+  }
+  
+}
 const button = document.getElementById('resetButton');
 button.addEventListener("click" , function(e) {
   let inp = prompt("Please Enter The Size of New Grid");
+  removeGrid();
   makeRows(inp , inp);
 } );
